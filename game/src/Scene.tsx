@@ -10,11 +10,11 @@ import { Sphere } from './components/Sphere'
 
 function Scene() {
   const { performance } = useControls('Monitoring', {
-    performance: false,
+    performance: false
   })
 
   const { animate } = useControls('Cube', {
-    animate: true,
+    animate: true
   })
 
   const cubeRef = useRef<Mesh<BoxGeometry, MeshBasicMaterial>>(null)
@@ -27,7 +27,7 @@ function Scene() {
 
   return (
     <>
-      {performance && <Perf position='top-left' />}
+      {performance && <Perf position="top-left" />}
 
       <OrbitControls makeDefault />
 

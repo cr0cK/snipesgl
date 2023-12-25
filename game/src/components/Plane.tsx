@@ -7,7 +7,7 @@ function Plane() {
       receiveShadow
     >
       <planeGeometry />
-      <meshStandardMaterial color='greenyellow' />
+      <meshStandardMaterial color="greenyellow" />
     </mesh>
   )
 }
