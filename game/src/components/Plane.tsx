@@ -1,4 +1,4 @@
-function Plane() {
+export default function Plane() {
   return (
     <mesh
       rotation-x={-Math.PI / 2}
@@ -7,9 +7,7 @@ function Plane() {
       receiveShadow
     >
       <planeGeometry />
-      <meshStandardMaterial color="greenyellow" />
+      <meshStandardMaterial color='greenyellow' />
     </mesh>
   )
 }
-
-export { Plane }

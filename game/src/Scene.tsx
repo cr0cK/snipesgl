@@ -4,17 +4,17 @@ import { useControls } from 'leva'
 import { Perf } from 'r3f-perf'
 import { useRef } from 'react'
 import { BoxGeometry, Mesh, MeshBasicMaterial } from 'three'
-import { Cube } from './components/Cube'
-import { Plane } from './components/Plane'
-import { Sphere } from './components/Sphere'
+import Cube from './components/Cube'
+import Plane from './components/Plane'
+import Sphere from './components/Sphere'
 
-function Scene() {
+export default function Scene() {
   const { performance } = useControls('Monitoring', {
-    performance: false
+    performance: false,
   })
 
   const { animate } = useControls('Cube', {
-    animate: true
+    animate: true,
   })
 
   const cubeRef = useRef<Mesh<BoxGeometry, MeshBasicMaterial>>(null)
@@ -27,7 +27,7 @@ function Scene() {
 
   return (
     <>
-      {performance && <Perf position="top-left" />}
+      {performance && <Perf position='top-left' />}
 
       <OrbitControls makeDefault />
 
@@ -40,10 +40,10 @@ function Scene() {
       <ambientLight intensity={0.2} />
 
       <Cube ref={cubeRef} />
+
       <Sphere />
+
       <Plane />
     </>
   )
 }
-
-export { Scene }

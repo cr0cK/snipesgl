@@ -3,37 +3,37 @@ import { Leva } from 'leva'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { ACESFilmicToneMapping, sRGBEncoding } from 'three'
-import { Scene } from './Scene'
 import './styles/main.css'
+import Scene from './Scene'
 
 function Main() {
   return (
-    <div className="main">
+    <div className='main'>
       <Leva
         collapsed={false}
         oneLineLabels={false}
-        flat={true}
         theme={{
           sizes: {
-            titleBarHeight: '28px'
+            titleBarHeight: '28px',
           },
           fontSizes: {
-            root: '10px'
-          }
+            root: '10px',
+          },
         }}
+        flat
       />
       <Canvas
         dpr={[1, 2]}
         gl={{
           antialias: true,
           toneMapping: ACESFilmicToneMapping,
-          outputEncoding: sRGBEncoding
+          outputEncoding: sRGBEncoding,
         }}
         camera={{
           fov: 55,
           near: 0.1,
           far: 200,
-          position: [3, 2, 9]
+          position: [3, 2, 9],
         }}
         shadows
       >
@@ -46,5 +46,5 @@ function Main() {
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Main />
-  </React.StrictMode>
+  </React.StrictMode>,
 )
